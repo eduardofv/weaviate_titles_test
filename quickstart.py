@@ -3,12 +3,16 @@ import numpy as np
 import sys
 import time
 
+import openai
 import sentence_transformers as st
 import weaviate
 
 import warnings
 warnings.filterwarnings("ignore")
 
+titles_fn = "titles.txt"
+#embeddings_fn = "embed.txt" #mpnet-base embeddings
+embeddings_fn = "embed-ada-002.csv" #openai embeddings
 
 # Instantiate the client with the auth config
 client = weaviate.Client(
